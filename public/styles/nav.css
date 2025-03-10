@@ -13,12 +13,12 @@ nav {
 
 nav span {
   font-family: "Bungee", sans-serif;
-  font-size: 400;
+  font-weight: 400;
 }
 
 .fa-solid {
   color: red;
-  font-size: 200;
+  font-size: 1em;
 }
 
 .new-tweet {

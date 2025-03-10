@@ -17,12 +17,13 @@ html {
  */
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: cornsilk;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  padding-top: 120px;
 }
 
 /*

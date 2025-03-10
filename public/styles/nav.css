@@ -3,6 +3,9 @@ nav {
   justify-content: space-between;
   align-items: center;
 
+  position: fixed;
+  top: 0; /* need to define top: 0 to fix it */
+
   height: 120px;
   width: 100vw;
   background-color: #4056a1;

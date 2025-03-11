@@ -18,9 +18,10 @@ form > div {
   border: none;
   border-bottom: 5px solid #545149;
   margin-bottom: 1em;
+  padding: 1em;
 }
 
-button[type] {
+button[type="submit"] {
   background-color: #4056a1;
   color: #fff;
 }

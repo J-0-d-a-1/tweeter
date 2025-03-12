@@ -52,9 +52,10 @@ const createTweetElement = (tweet) => {
 };
 
 const renderTweets = (tweets) => {
-  for (const tweet of tweets) {
-    $("#tweets-container").append(createTweetElement(tweet));
-  }
+  $("#tweets-container").append(tweets.map(createTweetElement));
+  // for (const tweet of tweets) {
+  //   $("#tweets-container").append(createTweetElement(tweet));
+  // }
 };
 
 // const $tweet = createTweetElement(tweetData);

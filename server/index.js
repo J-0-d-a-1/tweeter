@@ -1,9 +1,9 @@
 "use strict";
 
 // Basic express setup:
-const express       = require("express");
-const app           = express();
-const PORT          = 8080;
+const express = require("express");
+const app = express();
+const PORT = 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));

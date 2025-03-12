@@ -38,6 +38,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/new-tweet.js"></script>
     <script
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
@@ -57,7 +58,7 @@
 
     <header>
       <div>
-        <img src="/images/profile-hex.png" alt="" />
+        <img src="/images/profile-hex.png" alt="Your Photo" />
       </div>
       <br />
       <div>
@@ -77,22 +78,7 @@
           </div>
         </form>
       </section>
-      <section class="tweets">
-        <div class="tweet">
-          <header>
-            <span><i class="fa-regular fa-face-smile"></i>Newton</span
-            ><span class="account">@Sirisaac</span>
-          </header>
-          <article>tweet text will be here</article>
-          <footer>
-            <span>10 dats ago</span>
-            <span class="icons">
-              <i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i
-              ><i class="fa-solid fa-heart"></i>
-            </span>
-          </footer>
-        </div>
-      </section>
+      <section class="tweets" id="tweets-container"></section>
     </main>
   </body>
 </html>

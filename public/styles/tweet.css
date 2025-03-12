@@ -1,0 +1,55 @@
+.tweet {
+  /* display: flex;
+  flex-direction: column; */
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border: 5px solid #545149;
+}
+
+.tweet:hover {
+  box-shadow: 8px 8px 8px #9e9d99;
+}
+
+section.tweet > header {
+  display: flex;
+  justify-content: space-between;
+  color: #9e9d99;
+}
+
+section.tweet > header > span > i {
+  padding-right: 0.5em;
+  font-size: 1.5em;
+}
+
+.account {
+  color: #bebdb7;
+}
+
+section.tweet > article {
+  border-bottom: 5px solid #545149;
+  padding-top: 2em;
+  padding-bottom: 1.5em;
+}
+
+section > footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  padding-top: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  color: #9e9d99;
+}
+
+section > footer > span.icons {
+  color: #4056a1;
+}
+
+section > footer > span.icons > i {
+  padding: 0.2em;
+}
+
+section > footer > span.icons > i:hover {
+  color: #eaac42;
+}

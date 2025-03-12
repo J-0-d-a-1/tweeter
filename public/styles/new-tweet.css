@@ -25,3 +25,11 @@ button[type="submit"] {
   background-color: #4056a1;
   color: #fff;
 }
+
+.redText {
+  color: #f00;
+}
+
+.blackText {
+  color: #000;
+}

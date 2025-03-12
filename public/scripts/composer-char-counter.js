@@ -9,11 +9,12 @@ $(document).ready(() => {
 
     if (limitOfCharacter >= 0) {
       counterElement.val(limitOfCharacter);
-
-      counterElement.css("color", "#000");
+      counterElement.addClass("blackText");
+      counterElement.removeClass("redText");
     } else {
       counterElement.val(limitOfCharacter);
-      counterElement.css("color", "#f00");
+      counterElement.addClass("redText");
+      counterElement.removeClass("blackText");
     }
   });
 });

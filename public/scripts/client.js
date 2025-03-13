@@ -28,7 +28,7 @@ const createTweetElement = (tweet) => {
 const renderTweets = (tweets) => {
   // $("#tweets-container").append(tweets.map(createTweetElement));
   for (const tweet of tweets) {
-    $("#tweets-container").append(createTweetElement(tweet));
+    $("#tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
@@ -50,10 +50,10 @@ $(document).ready(() => {
   // const $button = $("div button");
   // $button.on("click", function () {
   //   $.ajax("/api/tweets", {
-  //     method: "get",
+  //     method: "post",
   //     url: "/tweets",
   //   }).then((data) => console.log(data));
   // });
 });
 
-module.exports = createTweetElement;
+module.exports = { loadTweets, createTweetElement };

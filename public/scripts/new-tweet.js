@@ -1,4 +1,4 @@
-const createTweetElement = require("../scripts/client");
+const { loadTweets } = require("../scripts/client");
 
 const isTweetValid = (valueOfTextarea) => {
   if (valueOfTextarea.length > 140) {
@@ -31,10 +31,7 @@ $(document).ready(() => {
       url: "/api/tweets",
       data: $(this).serialize(),
     })
-      .then((data) => {
-        const text = data.content.text;
-        cleateTweetElement(text);
-      })
+      .then(loadTweets())
       .catch((error) => {
         console.log(error);
       });

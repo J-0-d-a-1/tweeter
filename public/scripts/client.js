@@ -32,6 +32,20 @@ const renderTweets = (tweets) => {
   }
 };
 
+const isTweetValid = (valueOfTextarea) => {
+  if (valueOfTextarea.length > 140) {
+    $(".error-message").css("display", "inline-block").slideDown(1000);
+    return false;
+  }
+
+  if (valueOfTextarea === null || valueOfTextarea === "") {
+    alert("You need to write something");
+    return false;
+  }
+
+  return true;
+};
+
 $(document).ready(() => {
   // GET for /api/tweets
   const loadTweets = function () {
@@ -53,12 +67,22 @@ $(document).ready(() => {
   $("section.new-tweet > form").on("submit", function (event) {
     event.preventDefault();
 
+    const $text = $("#tweet-text").val();
+
+    if (!isTweetValid($text)) {
+      return;
+    }
+
     $.ajax({
       method: "POST",
       url: "/api/tweets",
       data: $(this).serialize(),
-    }).then(() => {
-      loadTweets();
-    });
+    })
+      .then(() => {
+        loadTweets();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
 });

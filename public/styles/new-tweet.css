@@ -33,3 +33,12 @@ button[type="submit"] {
 .blackText {
   color: #000;
 }
+
+.error-message {
+  display: none;
+  color: #f00;
+  border: 5px solid #f00;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 1.2em;
+}

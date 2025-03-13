@@ -76,6 +76,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <p class="error-message">
+          <i class="fa-solid fa-bomb"></i> Your tweet is too long! Don't exceed
+          140 characters! <i class="fa-solid fa-bomb"></i>
+        </p>
         <form method="post" acction="/api/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>

@@ -26,30 +26,22 @@ $(document).ready(() => {
   };
 
   const renderTweets = (tweets) => {
-    $("#tweets-container").append(tweets.map(createTweetElement));
-    // for (const tweet of tweets) {
-    //   $("#tweets-container").append(createTweetElement(tweet));
-    // }
+    // $("#tweets-container").append(tweets.map(createTweetElement));
+    for (const tweet of tweets) {
+      $("#tweets-container").append(createTweetElement(tweet));
+    }
   };
-
-  // const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-
-  // renderTweets(data);
-  // $("#tweets-container").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
   // GET for /api/tweets
-  const loadTweetws = function () {
-    const $button = $("div button");
-    $button.on("click", function () {
-      $.ajax("/api/tweets", {
-        method: "get",
-        url: "/tweets",
-      }).then((data) => renderTweets(data));
-    });
+  const loadTweets = function () {
+    $.ajax("/api/tweets", {
+      method: "get",
+      url: "/tweets",
+    }).then((data) => renderTweets(data));
+    // const $button = $("div button");
+    // $button.on("click", function () {
+    // });
   };
 
-  loadTweetws();
+  loadTweets();
 });

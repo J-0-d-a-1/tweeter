@@ -34,12 +34,12 @@ const renderTweets = (tweets) => {
 
 const isTweetValid = (valueOfTextarea) => {
   if (valueOfTextarea.length > 140) {
-    $(".error-message").css("display", "inline-block").slideDown(1000);
+    $(".exceeded-error-message").css("display", "inline-block").slideDown(1000);
     return false;
   }
 
   if (valueOfTextarea === null || valueOfTextarea === "") {
-    alert("You need to write something");
+    $(".empty-error-message").css("display", "inline-block").slideDown(1000);
     return false;
   }
 

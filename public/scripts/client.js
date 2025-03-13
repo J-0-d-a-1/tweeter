@@ -37,7 +37,11 @@ $(document).ready(() => {
     $.ajax("/api/tweets", {
       method: "get",
       url: "/tweets",
-    }).then((data) => renderTweets(data));
+    })
+      .then((data) => renderTweets(data))
+      .catch((error) => {
+        console.log(error, "Failed fetching data: ");
+      });
     // const $button = $("div button");
     // $button.on("click", function () {
     // });

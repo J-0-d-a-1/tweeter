@@ -1,5 +1,3 @@
-const { loadTweets } = require("../scripts/client");
-
 const isTweetValid = (valueOfTextarea) => {
   if (valueOfTextarea.length > 140) {
     alert("Your tweet is too long");
@@ -30,10 +28,8 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/tweets",
       data: $(this).serialize(),
-    })
-      .then(loadTweets())
-      .catch((error) => {
-        console.log(error);
-      });
+    }).catch((error) => {
+      console.log(error);
+    });
   });
 });

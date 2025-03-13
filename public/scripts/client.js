@@ -47,13 +47,15 @@ $(document).ready(() => {
 
   loadTweets();
 
-  // const $button = $("div button");
-  // $button.on("click", function () {
-  //   $.ajax("/api/tweets", {
-  //     method: "post",
-  //     url: "/tweets",
-  //   }).then((data) => console.log(data));
-  // });
-});
+  $("section.new-tweet > form").on("submit", function (event) {
+    event.preventDefault();
 
-module.exports = { loadTweets, createTweetElement };
+    $.ajax({
+      method: "POST",
+      url: "/api/tweets",
+      data: $(this).serialize(),
+    }).then((data) => {
+      loadTweets();
+    });
+  });
+});

@@ -1,3 +1,5 @@
+const createTweetElement = require("../scripts/client");
+
 const isTweetValid = (valueOfTextarea) => {
   if (valueOfTextarea.length > 140) {
     alert("Your tweet is too long");
@@ -28,14 +30,13 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/tweets",
       data: $(this).serialize(),
-    }).catch((error) => {
-      console.log(error);
-      // if (data.content.text === "" || data.content.text === null) {
-      //   alert("You need to write something!");
-      // }
-      // if (data.content.text.length > 140) {
-      //   alert("Your tweet is too long!");
-      // }
-    });
+    })
+      .then((data) => {
+        const text = data.content.text;
+        cleateTweetElement(text);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
 });

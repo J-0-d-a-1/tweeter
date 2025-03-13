@@ -3,9 +3,9 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(() => {
-  const createTweetElement = (tweet) => {
-    let $tweet = `
+
+const createTweetElement = (tweet) => {
+  let $tweet = `
     <div class="tweet">
       <header>
         <span><img src="${tweet.user.avatars}" />${tweet.user.name}</span
@@ -22,16 +22,17 @@ $(document).ready(() => {
     </div>
   `;
 
-    return $tweet;
-  };
+  return $tweet;
+};
 
-  const renderTweets = (tweets) => {
-    // $("#tweets-container").append(tweets.map(createTweetElement));
-    for (const tweet of tweets) {
-      $("#tweets-container").append(createTweetElement(tweet));
-    }
-  };
+const renderTweets = (tweets) => {
+  // $("#tweets-container").append(tweets.map(createTweetElement));
+  for (const tweet of tweets) {
+    $("#tweets-container").append(createTweetElement(tweet));
+  }
+};
 
+$(document).ready(() => {
   // GET for /api/tweets
   const loadTweets = function () {
     $.ajax("/api/tweets", {
@@ -42,10 +43,17 @@ $(document).ready(() => {
       .catch((error) => {
         console.log(error, "Failed fetching data: ");
       });
-    // const $button = $("div button");
-    // $button.on("click", function () {
-    // });
   };
 
   loadTweets();
+
+  // const $button = $("div button");
+  // $button.on("click", function () {
+  //   $.ajax("/api/tweets", {
+  //     method: "get",
+  //     url: "/tweets",
+  //   }).then((data) => console.log(data));
+  // });
 });
+
+module.exports = createTweetElement;

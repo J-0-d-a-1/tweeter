@@ -17,7 +17,7 @@ div.tweet > header {
   color: #9e9d99;
 }
 
-div.tweet > header > span > i {
+div.tweet > header > span > img {
   padding-right: 0.5em;
   font-size: 1.5em;
 }

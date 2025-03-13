@@ -39,7 +39,10 @@ $(document).ready(() => {
       method: "get",
       url: "/tweets",
     })
-      .then((data) => renderTweets(data))
+      .then((data) => {
+        $("#tweets-container").empty();
+        renderTweets(data);
+      })
       .catch((error) => {
         console.log(error, "Failed fetching data: ");
       });
@@ -54,7 +57,7 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/tweets",
       data: $(this).serialize(),
-    }).then((data) => {
+    }).then(() => {
       loadTweets();
     });
   });

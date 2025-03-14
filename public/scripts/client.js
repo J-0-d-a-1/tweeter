@@ -59,8 +59,6 @@ $(document).ready(() => {
       url: "/tweets",
     })
       .then((data) => {
-        console.log($("#tweet-text").val());
-        $("#tweet-text").val("");
         renderTweets(data);
       })
       .catch((error) => {
@@ -85,8 +83,10 @@ $(document).ready(() => {
       url: "/api/tweets",
       data: $(this).serialize(),
     })
-      .then(() => {
-        loadTweets();
+      .then((data) => {
+        $("#tweet-text").val("");
+        const tweet = createTweetElement(data);
+        $("#tweets-container").prepend(tweet);
       })
       .catch((error) => {
         console.log(error);

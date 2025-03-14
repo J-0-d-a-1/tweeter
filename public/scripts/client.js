@@ -34,16 +34,21 @@ const renderTweets = (tweets) => {
 
 const isTweetValid = (valueOfTextarea) => {
   if (valueOfTextarea.length > 140) {
-    $(".exceeded-error-message").css("display", "inline-block").slideDown(1000);
+    $(".exceeded-error-message").slideDown(1000);
     return false;
   }
 
   if (valueOfTextarea === null || valueOfTextarea === "") {
-    $(".empty-error-message").css("display", "inline-block").slideDown(1000);
+    $(".empty-error-message").slideDown(1000);
     return false;
   }
 
   return true;
+};
+
+const clearErrorMessage = () => {
+  $(".exceeded-error-message").slideUp(1000);
+  $(".empty-error-message").slideUp(1000);
 };
 
 $(document).ready(() => {
@@ -67,6 +72,7 @@ $(document).ready(() => {
 
   $("section.new-tweet > form").on("submit", function (event) {
     event.preventDefault();
+    clearErrorMessage();
 
     const $text = $("#tweet-text").val();
 

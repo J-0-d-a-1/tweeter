@@ -54,7 +54,8 @@ $(document).ready(() => {
       url: "/tweets",
     })
       .then((data) => {
-        $("#tweets-container").empty();
+        console.log($("#tweet-text").val());
+        $("#tweet-text").val("");
         renderTweets(data);
       })
       .catch((error) => {

@@ -19,6 +19,7 @@ form > div {
   border-bottom: 5px solid #545149;
   margin-bottom: 1em;
   padding: 1em;
+  height: 1em;
 }
 
 button[type="submit"] {

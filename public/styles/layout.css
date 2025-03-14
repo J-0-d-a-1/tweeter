@@ -23,7 +23,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  padding-top: 120px;
+
+  margin: 0 auto;
 }
 
 /*
@@ -37,4 +38,25 @@ body {
   width: 90%;
   margin: auto;
   background-color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding-top: 120px;
+  }
+
+  .container {
+    float: right;
+    width: 66.7%;
+    margin-right: 1em;
+    margin-top: 2em;
+
+    max-width: 1024px;
+  }
 }

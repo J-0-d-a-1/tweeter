@@ -3,15 +3,14 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  position: fixed;
-  top: 0; /* need to define top: 0 to fix it */
-
+  background-color: #f59b00;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
   height: 120px;
   width: 100vw;
-  background-color: #4056a1;
   color: #fff;
   padding-right: 1.5em;
   padding-left: 1.5em;
+  margin-top: 0;
 }
 
 nav > span {
@@ -28,4 +27,13 @@ nav > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    position: fixed;
+    top: 0; /* need to define top: 0 to fix it */
+
+    background-color: #4056a1;
+  }
 }
